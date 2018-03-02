@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{standard_layout}">
 <head>
     <title>Test</title>
 </head>
-<body>
+<>
     <b>hello world</b>
+    <img th:src="@{/img/photos/img1.jpg}">
 </body>
 </html>
