@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{standard_layout}">
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>ielts | Register</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+   <!-- BEGIN GLOBAL MANDATORY STYLES -->          
+   <link th:href="@{/plugins/font-awesome/css/font-awesome.min.css}" rel="stylesheet" type="text/css"/>
+   <link th:href="@{/plugins/bootstrap/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+   <!-- END GLOBAL MANDATORY STYLES -->
+   
+   <!-- BEGIN PAGE LEVEL PLUGIN STYLES --> 
+   <link th:href="@{/plugins/fancybox/source/jquery.fancybox.css}" rel="stylesheet" />
+   <!-- END PAGE LEVEL PLUGIN STYLES -->
+
+   <!-- BEGIN THEME STYLES --> 
+   <link th:href="@{/css/style-metronic.css}" rel="stylesheet" type="text/css"/>
+   <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
+   <link th:href="@{/css/pages/page404.css}" rel="stylesheet" type="text/css"/>
+   <link th:href="@{/css/themes/blue.css}" rel="stylesheet" type="text/css" id="style_color"/>
+   <link th:href="@{/css/style-responsive.css}" rel="stylesheet" type="text/css"/>
+   <link th:href="@{/css/custom.css}" rel="stylesheet" type="text/css"/>
+   <!-- END THEME STYLES -->
+
+   <link rel="shortcut icon" href="favicon.ico" />
+
+<link rel="stylesheet" th:href="@{/css/countrySelect.css}">
+<script src="ajax_check.js"></script>
+
+</head>
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+<body>
+   <!-- BEGIN HEADER -->
+   <div th:replace="fragments/header"></div>
+    <!-- END HEADER -->
+    <script type="text/javascript">
+        var node = document.getElementsByClassName("nav");
+        node[0].childNodes[11].className="active";
+    </script>
+    <!-- BEGIN PAGE CONTAINER -->  
+
+    <!-- BEGIN PAGE CONTAINER -->  
+    <div class="page-container">
+  
+        <!-- BEGIN BREADCRUMBS -->   
+        <div class="row breadcrumbs margin-bottom-40">
+            <div class="container">
+                <div class="col-md-4 col-sm-4">
+                    <h1>Signup</h1>
+                </div>
+                <div class="col-md-8 col-sm-8">
+                    <ul class="pull-right breadcrumb">
+                        <li><a href="index">Home</a></li>
+                        <li><a href="login">Member's Area</a></li>
+                        <li class="active">Registration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END BREADCRUMBS -->
+
+        <!-- BEGIN CONTAINER -->   
+        <div class="container margin-bottom-40">
+          <div class="row">
+            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 login-signup-page">
+                <form method="POST" th:action="@{/signup}" modelAttribute="sginup">
+                    
+                    <h2>Signup</h2>
+
+
+                    <div class="input-group margin-bottom-20">
+                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                        <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" oninput="checkemail();" required>
+                        <span id="email_status"></span>
+                    </div>    
+                    <div class="input-group margin-bottom-20">
+                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                        <input type="password" name="password" class="form-control" placeholder="Password" value="12345" required>
+                    </div>
+                    <div class="input-group margin-bottom-20">
+                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                        <input type="password" name="repwd" class="form-control" placeholder="Confirm password" value="12345" required>
+                    </div>
+                    <div class="input-group margin-bottom-20">
+                        <span class="input-group-addon"><i class="fa fa-globe"></i></span>
+                        <input type="text" id="country" name="country" required/>
+                        <input type="hidden" id="country_code" />
+
+                        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+                        <script src="assets/scripts/countrySelect.min.js"></script>
+                        <script>
+                          $("#country").countrySelect();
+                        </script>
+                    </div>
+                    <div class="input-group margin-bottom-20">
+                        <span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
+                        <div id="gender_radio" style="padding-left: 10px;padding-top: 4px;">
+                        <input type="radio" name="gender" value="m" checked required>Male&nbsp&nbsp&nbsp
+                        <input type="radio" name="gender" value="f">Female
+                        </div>
+                    </div>
+                    <div class="input-group margin-bottom-20">
+                        <span class="input-group-addon"><i class="fa fa-birthday-cake"></i></span>
+                        <input type="date" name="bday" style="margin-left: 1px;padding-top: 3px;">
+                    </div>
+                   
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="submit" class="btn theme-btn pull-right" name="submit_form">Signup</button>                        
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="forget-password">
+                        <h4>Already have an account ?</h4>
+                        <p>
+                            Click <a href="login">here</a> to login.
+                        </p>
+                    </div>
+                </form>
+            </div>
+          </div>
+        </div>
+        <!-- END CONTAINER -->
+
+  </div>
+    <!-- END PAGE CONTAINER -->  
+
+    <!-- BEGIN FOOTER -->
+   <div th:replace="fragments/footer"></div>
+    <!-- END FOOTER -->
+
+</body>
+<!-- END BODY -->
+</html>

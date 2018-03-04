@@ -1,4 +1,4 @@
-package com.prolancer.essaymarker.Controller;
+package com.prolancer.essaymarker.controller;
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 import org.springframework.stereotype.Controller;
