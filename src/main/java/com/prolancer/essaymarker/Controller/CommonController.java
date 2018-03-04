@@ -14,7 +14,7 @@ public class CommonController {
     }
 
     @RequestMapping(path = "plans", method = GET)
-    public String login() {
+    public String plans() {
         return "plans";
     }
 }
