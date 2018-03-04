@@ -12,4 +12,9 @@ public class CommonController {
     public String home() {
         return "index";
     }
+
+    @RequestMapping(path = "plans", method = GET)
+    public String login() {
+        return "plans";
+    }
 }
