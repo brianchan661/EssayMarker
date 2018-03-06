@@ -3,6 +3,8 @@ package com.prolancer.essaymarker.controller;
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 import com.prolancer.essaymarker.model.view.SignUp;
+import com.prolancer.essaymarker.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,6 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class CommonController {
+
+    @Autowired
+    private UserService userService;
 
     @RequestMapping(path = "index", method = GET)
     public String home() {
@@ -33,7 +38,7 @@ public class CommonController {
         if (result.hasErrors()){
             System.out.println(result.getErrorCount());
         }
-
+        userService.createNewUser(signUp);
         System.out.println(signUp.getEmail());
         return "register_finish";
     }

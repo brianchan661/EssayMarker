@@ -27,8 +27,9 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
     compile("org.springframework.boot:spring-boot-devtools")
     compile("net.sourceforge.nekohtml:nekohtml")
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: '2.0.0.RELEASE'
     testCompile('org.springframework.boot:spring-boot-starter-test')
-
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
     //for local testing
-    compile 'com.h2database:h2:1.4.196'
+    compile("com.h2database:h2")
 }
