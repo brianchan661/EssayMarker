@@ -19,6 +19,7 @@ public class UserInfo {
     private int userId;
     private String email;
     private Role role;
+    private boolean enable;
     private String password;
     private String countryCode;
     private String gender;

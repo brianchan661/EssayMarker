@@ -26,20 +26,21 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService()).passwordEncoder(passwordEncoder());
+        auth.userDetailsService(userDetailsService());
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .antMatchers("/login").permitAll()
-                .antMatchers("/resources/**", "/plugins/**", "/css/**", "/scripts/**", "/fonts/**", "/img/**", "/h2/**").permitAll()
-                .anyRequest().hasRole(Role.USER.toString())
-                .and()
-                .formLogin().loginPage("/login")
+                .antMatchers("/login", "/signup", "/h2").permitAll()
+                .antMatchers("/assets/**").permitAll()
+                .anyRequest().hasAuthority(Role.USER.toString())
+            .and()
+                .formLogin().loginPage("/login").defaultSuccessUrl("/index")
             .and()
                 .logout().permitAll().logoutSuccessUrl("/login")
+                .and().headers().frameOptions().sameOrigin()
             .and()
                 .csrf().disable();
     }

@@ -26,6 +26,8 @@ dependencies {
 
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
     compile("org.springframework.boot:spring-boot-devtools")
+    compile group: 'org.hibernate', name: 'hibernate-java8', version: '5.2.14.Final'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '2.0.0.RELEASE'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.0.0.RELEASE'
     compile("net.sourceforge.nekohtml:nekohtml")
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: '2.0.0.RELEASE'

@@ -12,27 +12,27 @@
     <meta content="" name="author" />
 
    <!-- BEGIN GLOBAL MANDATORY STYLES -->          
-   <link th:href="@{/plugins/font-awesome/css/font-awesome.min.css}" rel="stylesheet" type="text/css"/>
-   <link th:href="@{/plugins/bootstrap/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+   <link th:href="@{/assets/plugins/font-awesome/css/font-awesome.min.css}" rel="stylesheet" type="text/css"/>
+   <link th:href="@{/assets/plugins/bootstrap/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
    <!-- END GLOBAL MANDATORY STYLES -->
    
    <!-- BEGIN PAGE LEVEL PLUGIN STYLES --> 
-   <link th:href="@{/plugins/fancybox/source/jquery.fancybox.css}" rel="stylesheet" />
+   <link th:href="@{/assets/plugins/fancybox/source/jquery.fancybox.css}" rel="stylesheet" />
    <!-- END PAGE LEVEL PLUGIN STYLES -->
 
    <!-- BEGIN THEME STYLES --> 
-   <link th:href="@{/css/style-metronic.css}" rel="stylesheet" type="text/css"/>
-   <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
-   <link th:href="@{/css/pages/page404.css}" rel="stylesheet" type="text/css"/>
-   <link th:href="@{/css/themes/blue.css}" rel="stylesheet" type="text/css" id="style_color"/>
-   <link th:href="@{/css/style-responsive.css}" rel="stylesheet" type="text/css"/>
-   <link th:href="@{/css/custom.css}" rel="stylesheet" type="text/css"/>
+   <link th:href="@{/assets/css/style-metronic.css}" rel="stylesheet" type="text/css"/>
+   <link th:href="@{/assets/css/style.css}" rel="stylesheet" type="text/css"/>
+   <link th:href="@{/assets/css/pages/page404.css}" rel="stylesheet" type="text/css"/>
+   <link th:href="@{/assets/css/themes/blue.css}" rel="stylesheet" type="text/css" id="style_color"/>
+   <link th:href="@{/assets/css/style-responsive.css}" rel="stylesheet" type="text/css"/>
+   <link th:href="@{/assets/css/custom.css}" rel="stylesheet" type="text/css"/>
    <!-- END THEME STYLES -->
 
    <link rel="shortcut icon" href="favicon.ico" />
 
-<link rel="stylesheet" th:href="@{/css/countrySelect.css}">
-<script src="ajax_check.js"></script>
+<link rel="stylesheet" th:href="@{/assets/css/countrySelect.css}">
+<!--script th:src="@{/assets/scripts/ajax_check.js}"></script-->
 
 </head>
 <!-- END HEAD -->
@@ -79,7 +79,7 @@
 
                     <div class="input-group margin-bottom-20">
                         <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                        <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" oninput="checkemail();" required>
+                        <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" required>
                         <span id="email_status"></span>
                     </div>    
                     <div class="input-group margin-bottom-20">
@@ -96,7 +96,7 @@
                         <input type="hidden" id="country_code" />
 
                         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-                        <script src="assets/scripts/countrySelect.min.js"></script>
+                        <script th:src="@{/assets/scripts/countrySelect.min.js}"></script>
                         <script>
                           $("#country").countrySelect();
                         </script>
