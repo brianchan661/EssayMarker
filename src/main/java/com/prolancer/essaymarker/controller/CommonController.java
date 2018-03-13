@@ -74,6 +74,11 @@ public class CommonController {
         return returnMessage(model, "invalid verification token");
     }
 
+    @RequestMapping(path = "plans", method = GET)
+    public String plans() {
+        return "plans";
+    }
+
     private String returnMessage(Model model, String message) {
         CommonMessage commonMessage = new CommonMessage();
         commonMessage.setMessage(message);
