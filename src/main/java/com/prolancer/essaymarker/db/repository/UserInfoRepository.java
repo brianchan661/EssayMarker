@@ -13,8 +13,9 @@ public interface UserInfoRepository extends CrudRepository<UserInfo, Integer> {
 
     UserInfo findByEmail(String email);
 
+    UserInfo findByUserId(int userId);
+
     @Query("select userInfo from UserInfo userInfo where userInfo.email = :email and userInfo.countryCode = :country")
     List<UserInfo> findByEmailAndCountry(@Param("email") String email, @Param("country") String country);
-
 
 }

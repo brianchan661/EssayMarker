@@ -49,4 +49,14 @@ public class UserService {
         tokenRepository.save(verToken);
     }
 
+    public boolean confirmVerificationToken(String verToken) {
+        VerificationToken token = tokenRepository.findByToken(verToken);
+        if (token == null) {
+            return false;
+        }
+        UserInfo user = userInfoRepository.findByUserId(token.getUser().getUserId());
+        user.setEnable(true);
+        userInfoRepository.save(user);
+        return true;
+    }
 }

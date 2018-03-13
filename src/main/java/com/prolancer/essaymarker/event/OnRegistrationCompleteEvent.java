@@ -13,12 +13,10 @@ import java.util.Locale;
 public class OnRegistrationCompleteEvent extends ApplicationEvent {
 
     private UserInfo userInfo;
-    private String appUrl;
 
     public OnRegistrationCompleteEvent(
-            UserInfo userInfo, String appUrl) {
+            UserInfo userInfo) {
         super(userInfo);
         this.userInfo = userInfo;
-        this.appUrl = appUrl;
     }
 }
