@@ -35,7 +35,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .authorizeRequests()
                 .antMatchers("/login", "/signup", "/h2", "/signUpCompleted").permitAll()
                 .antMatchers("/assets/**").permitAll()
-                .anyRequest().hasAuthority(Role.USER.toString())
+//                .anyRequest().hasAuthority(Role.USER.toString())
             .and()
                 .formLogin().loginPage("/login").defaultSuccessUrl("/index")
             .and()

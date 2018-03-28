@@ -79,6 +79,7 @@ public class CommonController {
         return "plans";
     }
 
+    //TODO move to base class controller
     private String returnMessage(Model model, String message) {
         CommonMessage commonMessage = new CommonMessage();
         commonMessage.setMessage(message);
